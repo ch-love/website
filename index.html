@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vanished</title>
+    <style>
+        /* Apply Arial font to the text */
+        #vanished {
+            font-family: Arial, sans-serif;
+            transition: color 0.3s ease; /* Faster transition effect */
+            color: white; /* Set text color to white */
+            text-align: center; /* Center-align text */
+        }
+
+        /* Set background color */
+        body {
+            background-color: #0a0014;
+            margin: 0; /* Remove default margin */
+            height: 100vh; /* Set height to viewport height */
+            display: flex; /* Use flexbox for vertical centering */
+            flex-direction: column; /* Stack elements vertically */
+            justify-content: center; /* Vertically center elements */
+        }
+
+        /* Style for links */
+        .container a {
+            color: white;
+            text-decoration: none; /* Remove underline from links */
+            margin: 10px; /* Add spacing around links */
+            font-family: Arial, sans-serif; /* Set font to Arial */
+            transition: transform 0.3s ease; /* Smooth transition for 3D effect */
+            display: inline-block; /* Allow transform to be applied */
+        }
+
+        /* Hover effect for links */
+        .container a:hover {
+            text-decoration: underline; /* Underline on hover */
+            transform: translateZ(10px); /* Apply 3D effect on hover */
+        }
+
+        /* Style for container div */
+        .container {
+            text-align: center;
+        }
+
+        /* Style for copyright text */
+        .copyright {
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 20px; /* Add margin to separate from links */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="vanished">Vanished</h1>
+        
+        <!-- Links right under the word "Vanished" with spacing -->
+        <div>
+            <a href="projects.html">Projects</a>
+            <a href="blog.html">Blog</a>
+            <a href="socials.html">Socials</a>
+            <a href="sponser.html">sponser (new)</a>
+        </div>
+
+        <!-- Copyright text -->
+        <div class="copyright">
+            &copy; 2024 Vanished
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to change the color of the text every second
+        setInterval(function() {
+            var colors = ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#9400D3'];
+            var randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.getElementById('vanished').style.color = randomColor;
+        }, 1000);
+    </script>
+</body>
+</html>
