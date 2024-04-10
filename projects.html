@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects</title>
+<style>
+  body {
+    background-color: #0a0014;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+
+  a {
+    text-decoration: none; /* Remove underline from anchor tag */
+    color: inherit; /* Inherit color from parent */
+  }
+
+  h1 {
+    text-align: left;
+    font-size: 36px; /* Increased font size */
+    padding: 20px;
+    transition: color 0.3s; /* Added transition for color change */
+    cursor: pointer; /* Added cursor pointer */
+  }
+
+  h1:hover {
+    color: #c8a2c8; /* Light purple */
+  }
+
+  .project-box {
+    background-color: #0a0014;
+    color: white;
+    padding: 20px;
+    margin: 20px;
+    /* Removed border-radius property */
+    display: flex;
+    align-items: center;
+    width: 80%; /* Set the width of the project box */
+  }
+
+  .project-box img {
+    width: 304px;
+    height: 173px;
+    margin-right: 20px;
+    border-radius: 10px; /* Added border-radius to the image */
+  }
+
+  .project-description {
+    font-weight: bold;
+    margin-top: 0; /* Adjusted margin-top */
+  }
+
+  .project-paragraph {
+    margin-top: 5px; /* Adjusted margin-top */
+  }
+
+  .buttons-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px; /* Reduced margin-top */
+  }
+
+  .button {
+    padding: 10px 20px;
+    border-radius: 30px; /* Rounder buttons */
+    background-color: #8482ce; /* Green background */
+    color: white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added box-shadow for glow effect */
+  }
+
+  .button:hover {
+    background-color: #353a81; /* Darker green on hover */
+  }
+
+  /* Added margin between buttons */
+  .button + .button {
+    margin-left: 5px;
+  }
+</style>
+</head>
+<body>
+
+<a href="index.html"> <!-- Added anchor tag with href to index.html -->
+  <h1>Projects</h1>
+</a>
+
+<div class="project-box">
+  <img src="https://i.imgur.com/sYsjoPl.png" alt="Shaytris">
+  <div>
+    <p class="project-description">Shaytris</p>
+    <p class="project-paragraph">A free and open source Tetris client written in JavaScript.</p>
+    <div class="buttons-container">
+      <a href="https://shaytris.github.io" class="button">View Webpage</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
