@@ -1,81 +1,439 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Vanished</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chlove</title>
+    <link rel="icon" type="image/x-icon" href="https://i.imgur.com/V6EjfWa.png">
     <style>
-        /* Apply Arial font to the text */
-        #vanished {
-            font-family: Arial, sans-serif;
-            transition: color 0.3s ease; /* Faster transition effect */
-            color: white; /* Set text color to white */
-            text-align: center; /* Center-align text */
-        }
-
-        /* Set background color */
         body {
-            background-color: #0a0014;
-            margin: 0; /* Remove default margin */
-            height: 100vh; /* Set height to viewport height */
-            display: flex; /* Use flexbox for vertical centering */
-            flex-direction: column; /* Stack elements vertically */
-            justify-content: center; /* Vertically center elements */
+            margin: 0;
+            font-family: 'Chakra Petch', sans-serif;
+            background-color: #222;
+            color: #fff;
         }
-
-        /* Style for links */
-        .container a {
-            color: white;
-            text-decoration: none; /* Remove underline from links */
-            margin: 10px; /* Add spacing around links */
-            font-family: Arial, sans-serif; /* Set font to Arial */
-            transition: transform 0.3s ease; /* Smooth transition for 3D effect */
-            display: inline-block; /* Allow transform to be applied */
+        .header {
+            background-image: url('https://polar.vanished.lol/background.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px; /* Adjust as per your need */
+            position: relative;
         }
-
-        /* Hover effect for links */
-        .container a:hover {
-            text-decoration: underline; /* Underline on hover */
-            transform: translateZ(10px); /* Apply 3D effect on hover */
+        .header:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.2); /* Adjust the alpha channel for desired blur */
+            backdrop-filter: blur(10px); /* Adjust blur strength as needed */
         }
-
-        /* Style for container div */
         .container {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            transform: translateY(-50%);
             text-align: center;
         }
+        .text {
+            width: auto;
+            display: inline-block;
+            vertical-align: middle;
+            text-align: left;
+            margin-left: 20px; /* Add some left margin for spacing */
+            float: left; /* Align to the left */
+        }
+        .links {
+            width: auto;
+            display: inline-block;
+            vertical-align: bottom; /* Align links to the bottom */
+            text-align: right;
+            margin-right: 20px; /* Add some right margin for spacing */
+            float: right; /* Align to the right */
+        }
+        .links a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px; /* Add some left margin for spacing */
+        }
+        .content {
+            display: flex;
+            padding: 20px;
+        }
+        .content-left {
+            flex-grow: 1;
+            margin-right: 20px;
+        }
+        .content-box {
+            background-color: #333;
+            padding: 0;
+            margin-bottom: 20px; /* Spacing between content boxes */
+            border-radius: 5px;
+        }
+        .content-title-bar {
+            background-color: #444;
+            padding: 10px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .content-body {
+            padding: 20px;
+        }
+        .project {
+            margin-bottom: 20px;
+        }
+        .project-title {
+            font-size: 1.2em;
+            margin: 0 0 10px 0;
+        }
+        .project-languages {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .language-box {
+            display: flex;
+            align-items: center;
+            background-color: #555;
+            border-radius: 15px;
+            padding: 5px 10px;
+        }
+        .language-box .circle {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+        .project-buttons {
+            margin-top: 10px;
+        }
+        .project-buttons a {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 5px 10px;
+            background-color: #555;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+        .widgets {
+            width: 300px; /* Fixed width for widgets */
+            display: flex;
+            flex-direction: column;
+        }
+        .widget {
+            background-color: #333;
+            padding: 0;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .widget-title-bar {
+            background-color: #444;
+            padding: 10px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .widget-body {
+            padding: 20px;
+        }
+        .widget-body a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .widget-body a:hover {
+            background-color: #555;
+            color: #fff;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        .widget-body img {
+            width: 20px; /* Adjust icon size */
+            height: 20px; /* Adjust icon size */
+            margin-right: 10px;
+        }
+        .last-played-song {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .last-played-song img {
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+        .song-details {
+            display: flex;
+            flex-direction: column;
+        }
+        .song-title {
+            font-size: 1em;
+            font-weight: bold;
+        }
+        .song-artist,
+        .song-album {
+            font-size: 0.9em;
+            color: #bbb;
+        }
+        
+        /* Recent Blog Posts Widget */
+        .widget-body .blog-post {
+            margin-bottom: 20px;
+        }
 
-        /* Style for copyright text */
-        .copyright {
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 20px; /* Add margin to separate from links */
+        .widget-body .rounded-box {
+            background-color: #444;
+            padding: 20px;
+            border-radius: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .widget-body .rounded-box:hover {
+            background-color: #555;
+        }
+
+        .widget-body .rounded-box h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .widget-body .rounded-box p {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        /* To remove underlines from links */
+        .widget-body .rounded-box a {
+            text-decoration: none;
+            color: inherit;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 id="vanished">Vanished</h1>
-        
-        <!-- Links right under the word "Vanished" with spacing -->
-        <div>
-            <a href="projects.html">Projects</a>
-            <a href="blog.html">Blog</a>
-            <a href="socials.html">Socials</a>
-            <a href="https://sponsor.vanished.lol">Sponser</a>
-        </div>
 
-        <!-- Copyright text -->
-        <div class="copyright">
-            &copy; 2024 Vanished
+<div class="header">
+    <div class="container">
+        <div class="text">
+            <h1>Chlove :3</h1>
+            <p>ur on my website wow</p>
+        </div>
+        <div class="links">
+            <a href="#">Home</a>
+            <a href="#">Patreon</a>
+            <a href="#">Blog</a>
         </div>
     </div>
+</div>
 
-    <script>
-        // JavaScript to change the color of the text every second
-        setInterval(function() {
-            var colors = ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#9400D3'];
-            var randomColor = colors[Math.floor(Math.random() * colors.length)];
-            document.getElementById('vanished').style.color = randomColor;
-        }, 1000);
-    </script>
+<div class="content">
+    <div class="content-left">
+        <div class="content-box">
+            <div class="content-title-bar">
+                <h2>About Me</h2>
+            </div>
+            <div class="content-body">
+                <p>Hi I'm an 18 year old Hobby Developer and streamer (<i>Kind of I never really stream</i>) I also mainly play TF2, Half Life, rhythm games and Tetris.</p>
+                <p>I started coding in Scratch (<i>I still do sometimes</i>) I now mainly code in Swift, Java, JavaScript/Typescript, Lua, C# and Kotlin.</p>
+                <p>Also I used to make Roblox YouTube videos lol</p>
+            </div>
+        </div>
+        <div class="content-box">
+            <div class="content-title-bar">
+                <h2>My Projects</h2>
+            </div>
+            <div class="content-body">
+                <p>Here are some of the projects I've been working on recently:</p>
+                <div class="project">
+                    <div class="project-title">Shaytris</div>
+                    <div class="project-languages">
+                        <div class="language-box">
+                            <div class="circle" style="background-color: #3178c6;"></div>
+                            <span>TypeScript</span>
+                        </div>
+                        <div class="language-box">
+                            <div class="circle" style="background-color: #e34c26;"></div>
+                            <span>HTML</span>
+                        </div>
+                        <div class="language-box">
+                            <div class="circle" style="background-color: #563d7c;"></div>
+                            <span>CSS</span>
+                        </div>
+                        <div class="language-box">
+                            <div class="circle" style="background-color: #F54A2A;"></div>
+                            <span>Swift</span>
+                        </div>
+                        <div class="language-box">
+                            <div class="circle" style="background-color: #b07219;"></div>
+                            <span>Java</span>
+                        </div>
+                        <div class="language-box">
+                            <div class="circle" style="background-color: #3572a5;"></div>
+                            <span>Python</span>
+                        </div>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="https://shaytris.lol">Website</a>
+                        <a href="https://github.com/Shaytris/Shaytris">Source Code</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-title">Quader</div>
+                    <div class="project-languages">
+                        <div class="language-box">
+                            <div class="circle" style="background-color: #178600;"></div>
+                            <span>C#</span>
+                        </div>
+                        <div class="language-box">
+                            <div class="circle" style="background-color: #A97BFF;"></div>
+                            <span>Kotlin</span>
+                        </div>
+                        <div class="language-box">
+                            <div class="circle" style="background-color: #3572a5;"></div>
+                            <span>Python</span>
+                        </div>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="https://github.com/QuaderDevs/Quader">Source Code</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-title">Trovo Expanded</div>
+                    <div class="project-languages">
+                        <div class="language-box">
+                            <div class="circle" style="background-color: #3178c6;"></div>
+                            <span>TypeScript</span>
+                        </div>
+                        <div class="language-box">
+                            <div class="circle" style="background-color: #e34c26;"></div>
+                            <span>HTML</span>
+                        </div>
+                        <div class="language-box">
+                            <div class="circle" style="background-color: #563d7c;"></div>
+                            <span>CSS</span>
+                        </div>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="#">Website</a>
+                        <a href="#">Source Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="widgets">
+        <div class="widget">
+            <div class="widget-title-bar">
+                <h3>My Socials</h3>
+            </div>
+            <div class="widget-body">
+                <p>
+                    <a href="https://x.com/@chlove__">
+                        <img src="https://i.imgur.com/FVFEmZ8.png" alt="Twitter Icon"> Twitter (X) / @chlove__
+                    </a>
+                </p>
+                <p>
+                    <a href="https://bsky.app/profile/vanished.lol">
+                        <img src="https://i.imgur.com/cdLipJy.png" alt="BlueSky Icon"> bsky / @vanished.lol
+                    </a>
+                </p>
+                <p>
+                    <a href="https://discord.gg/aUWzvgASnW">
+                        <img src="https://i.imgur.com/hqOnOAE.png" alt="Discord Icon"> Discord server / Chlove's Cabin
+                    </a>
+                </p>
+                <p>
+                    <a href="https://steamcommunity.com/id/chlovedev/">
+                        <img src="https://i.imgur.com/i1lTnun.png" alt="Steam Icon"> Steam / Chlovedev
+                    </a>
+                </p>
+                <p>
+                    <a href="https://trovo.live/s/chlove/">
+                        <img src="https://i.imgur.com/BZELhN9.png" alt="Trovo Icon"> Trovo (Twitch alternative) / chlove
+                    </a>
+                </p>
+                <p>
+                    <a href="https://osu.ppy.sh/users/36051714">
+                        <img src="https://i.imgur.com/NKANGrW.png" alt="osu! Icon"> osu! / chlovedev
+                    </a>
+                </p>
+                <p>
+                    <a href="https://t.me/notchlove">
+                        <img src="https://i.imgur.com/xVAFnZd.png" alt="fedi Icon"> telegram / @notchlove
+                    </a>
+                </p>
+                <p>
+                    <a href="https://blahaj.zone/@ch">
+                        <img src="https://i.imgur.com/QFYIpTY.png" alt="Telegram Icon"> Fediverse / @ch@blahaj.zone
+                    </a>
+                </p>
+                <p>
+                    <a href="https://codeberg.org/chlove">
+                        <img src="https://i.imgur.com/FEhBm3F.png" alt="CodeBerg Icon"> CodeBerg / chlove
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="widget">
+            <div class="widget-title-bar">
+                <h3>Currently listening to</h3>
+            </div>
+            <div class="widget-body">
+                <div class="last-played-song">
+                    <img id="song-art" src="https://i.imgur.com/CY3rcx7.png" alt="Song Art">
+                    <div class="song-details">
+                        <div id="song-title" class="song-title">Song Title</div>
+                        <div id="song-artist" class="song-artist">Artist Name</div>
+                        <div id="song-album" class="song-album">Album Title</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="widget">
+            <div class="widget-title-bar">
+                <h3>Recent Blog Posts</h3>
+            </div>
+            <div class="widget-body">
+                <div class="blog-post">
+                    <a href="https://vanished.lol">
+                        <div class="rounded-box">
+                            <h4>Welcome to my blog!</h4>
+                            <p>About a 1 minute read</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Add more blog posts as needed -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const apiKey = '47a0657e88922c188d3fdf5622b7b2ee';
+        const username = 'chlovedev';
+        const url = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const recentTrack = data.recenttracks.track[0];
+                const trackName = recentTrack.name;
+                const artistName = recentTrack.artist['#text'];
+                const albumName = recentTrack.album['#text'];
+                const albumArt = recentTrack.image[2]['#text'];
+
+                document.getElementById('song-title').textContent = trackName;
+                document.getElementById('song-artist').textContent = artistName;
+                document.getElementById('song-album').textContent = albumName;
+                document.getElementById('song-art').src = albumArt;
+            })
+            .catch(error => console.error('Error fetching the Last.fm API:', error));
+    });
+</script>
+
 </body>
 </html>
