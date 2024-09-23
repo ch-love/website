@@ -1,0 +1,320 @@
+:root {
+    --accent-color: #6be3c3; /* Default accent color */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: #f0f0f0;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 50px; /* Space between header and projects */
+}
+
+.header h1 {
+    font-size: 3rem;
+    color: var(--accent-color);
+    position: relative; /* Required for the underline */
+}
+
+.underline {
+    height: 4px;
+    background: var(--accent-color);
+    width: 100%; /* Full width */
+    margin: 10px auto;
+    transform: scaleX(0); /* Start as zero width */
+    animation: underline 1s forwards; /* Animate to full width */
+}
+
+@keyframes underline {
+    to {
+        transform: scaleX(1); /* Scale to full width */
+    }
+}
+
+#tagline {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.social-icon {
+    color: #f0f0f0;
+    font-size: 2rem;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: var(--accent-color);
+}
+
+.projects {
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.project-container {
+    display: flex;
+    justify-content: center; /* Center cards */
+    flex-wrap: wrap; /* Allow cards to wrap */
+    gap: 20px; /* Space between cards */
+}
+
+.project-card {
+    background: #1a1a1a;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    flex: 0 1 250px; /* Fixed width for the card */
+    position: relative; /* For the pseudo-element */
+    overflow: hidden; /* Prevent content overflow */
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
+}
+
+.project-card h3 {
+    margin: 10px 0;
+    color: var(--accent-color); /* Use dynamic color */
+}
+
+.project-card p {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0px; /* Add space between the tags */
+    margin-bottom: 25px;
+}
+
+
+.tag {
+    background: #333;
+    color: var(--accent-color);
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    margin: 5px; /* Uniform margin around each tag */
+}
+
+
+
+.view-button {
+    background: var(--accent-color);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 15px; /* Space above the button */
+}
+
+.view-button:hover {
+    background: #5ac1b0;
+}
+
+.separator {
+    color: #f0f0f0;
+    margin: 0 20px; /* Increased space around separators */
+    font-weight: bold; /* Make separators stand out */
+    line-height: 2; /* Adjust line height for better vertical centering */
+}
+
+.color-icon {
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--accent-color); /* Keep the icon's color consistent */
+    transition: none; /* Remove hover color change */
+}
+
+.social-links a {
+    margin: 0 20px; /* Space around social links */
+    text-decoration: none; /* Remove underline */
+    color: #f0f0f0; /* Button color */
+}
+
+.social-links a:hover {
+    color: var(--accent-color); /* Hover color for social links */
+}
+
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    max-width: 800px;
+    position: relative; /* To position the close button */
+}
+
+.modal-left {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.modal-right {
+    flex: 2;
+}
+
+.modal img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px; /* Spacing below header */
+}
+
+.donation-button {
+    display: inline-flex; /* Align icon and text */
+    align-items: center; /* Center icon vertically */
+    background-color: #6be3c3; /* Button background color */
+    color: #121212; /* Button text color */
+    padding: 10px 15px; /* Padding for button */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.donation-button:hover {
+    background-color: #5ac4b0; /* Darker shade on hover */
+}
+
+.crypto-options {
+    display: flex;
+    flex-direction: column; /* Stack code blocks vertically */
+    align-items: center; /* Center code blocks */
+    margin: 20px 0;
+}
+
+.code-block {
+    background-color: #2e2e2e; /* Dark background for code blocks */
+    color: #f0f0f0; /* Light text color */
+    padding: 15px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin: 10px 0; /* Margin between code blocks */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+    width: 100%; /* Make code blocks wider */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow */
+}
+
+.code-block:hover {
+    background-color: #3b3b3b; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+}
+
+.donation-link {
+    color: #ffffff; /* White text color */
+    text-decoration: none; /* Remove default underline */
+    position: relative; /* Position for the underline effect */
+}
+
+.donation-link::after {
+    content: ''; /* Create a pseudo-element */
+    display: block; /* Make it a block element */
+    height: 2px; /* Height of the underline */
+    background: #6be3c3; /* Underline color */
+    width: 0; /* Start with 0 width */
+    transition: width 0.3s; /* Smooth transition for the underline */
+    position: absolute; /* Position relative to the link */
+    bottom: -5px; /* Position below the text */
+    left: 50%; /* Center the underline */
+    transform: translateX(-50%); /* Adjust to center */
+}
+
+.donation-link:hover::after {
+    width: 100%; /* Expand underline on hover */
+}
+
+.donation-info li {
+    margin: 20px 0; /* Generous spacing between options */
+}
+
+.donation-option {
+    margin: 20px 0; /* Add generous spacing between options */
+}
+
+a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .lastfm {
+    margin-top: 20px;
+}
+
+.lastfm-container {
+    background-color: #f8f9fa; /* Light background */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Padding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.lastfm h2 {
+    margin-bottom: 10px; /* Spacing below the title */
+}
