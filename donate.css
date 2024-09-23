@@ -10,7 +10,7 @@
 
 body {
     margin: 0;
-    padding-top: 200px;
+    padding-top: 80px;
     padding-bottom: 89px; /* Add space at the top of the page */
     font-family: 'JetBrains Mono', monospace;
     background-color: #121212;
@@ -324,22 +324,4 @@ a {
 
 .lastfm h2 {
     margin-bottom: 10px; /* Spacing below the title */
-}
-
-.transgender {
-    background: linear-gradient(to right, #55cdfc, #f7a8b8, #fff, #f7a8b8, #55cdfc);
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
-.pansexual {
-    background: linear-gradient(to right, #ff218c, #ffd800, #21b1ff);
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
-.non-binary {
-    background: linear-gradient(to right, #fff430, #ffffff, #9c59d1, #000000);
-    -webkit-background-clip: text;
-    color: transparent;
 }
