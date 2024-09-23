@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <title>Donation</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Give me your money!!!!!!!!!!!!!!!</h1>
+            <div id="underline" class="underline"></div>
+            <p>Your donations help keep all my projects running, along with that you know help me pay my bills!</p>
+            <div class="social-links">
+                <div class="social-links">
+                    <a href="https://github.com/ch-love" class="social-icon"><i class="bi bi-github"></i></a>
+                    <a href="https://froggie.gay/@c" class="social-icon"><i class="bi bi-mastodon"></i></a>
+                    <a href="https://x.com/ch1ove" class="social-icon"><i class="bi bi-twitter"></i></a>
+                    <a href="https://twitch.tv/chlovelol" class="social-icon"><i class="bi bi-twitch"></i></a>
+                    <a href="https://t.me/ch1ove" class="social-icon"><i class="bi bi-telegram"></i></a>
+                    <a href="https://discord.com/users/1193635488314179709" class="social-icon"><i class="bi bi-discord"></i></a>
+                    
+                    <span class="separator">|</span> <!-- Separator -->
+                    
+                    <label for="colorInput" class="social-icon" onclick="document.getElementById('colorInput').click();">
+                        <i class="bi bi-palette"></i>
+                    </label>
+                    <input type="color" id="colorInput" value="#6be3c3" onchange="changeColor(this.value)" style="display: none;">
+                
+                    <span class="separator">|</span> <!-- Separator -->
+                
+                    <a href="/blog.html" class="social-icon"><i class="bi bi-newspaper"></i></a>
+                    <a href="/donate.html" class="social-icon"><i class="bi bi-cash"></i></a>
+            </div>
+        </div>
+        <h3>Support Options</h3>
+        <div class="donation-option">
+            <a href="https://www.patreon.com/ch1ove" target="_blank" class="donation-link">
+                <i class="bi bi-heart-fill"></i> Patreon
+            </a>
+        </div>
+        
+        
+            </ul>
+            <h3>Cryptocurrency Donations</h3>
+            <div class="crypto-options">
+                <div class="code-block" onclick="copyToClipboard('45xqSakAmB59XrGGhcAnh4TH7JULsaSxCTQqLp1p3HeFCtVrbEXrQ5vLH7QWq1S85GMNoNniQikZR7U7SCzbRB31SonJYzk')">
+                    <code>Monero (<i>XMR</i>) : 45xqSakAmB59XrGGhcAnh4TH7JULsaSxCTQqLp1p3HeFCtVrbEXrQ5vLH7QWq1S85GMNoNniQikZR7U7SCzbRB31SonJYzk</code>
+                </div>
+                <div class="code-block" onclick="copyToClipboard('0x8791150025F6a93CA228610661bC53c57B9AD64d')">
+                    <code>Ethereum (<i>ETH</i>) : 0x8791150025F6a93CA228610661bC53c57B9AD64d</code>
+                </div>
+            </div>
+            <p>Thank you for your generosity!</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
