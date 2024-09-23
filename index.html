@@ -3,487 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chlove</title>
-    <link rel="icon" type="image/x-icon" href="https://i.imgur.com/V6EjfWa.png">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Chakra Petch', sans-serif;
-            background-color: #222;
-            color: #fff;
-        }
-        .header {
-            background-image: url('https://polar.vanished.lol/background.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 400px; /* Adjust as per your need */
-            position: relative;
-        }
-        .header:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.2); /* Adjust the alpha channel for desired blur */
-            backdrop-filter: blur(10px); /* Adjust blur strength as needed */
-        }
-        .container {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            transform: translateY(-50%);
-            text-align: center;
-        }
-        .text {
-            width: auto;
-            display: inline-block;
-            vertical-align: middle;
-            text-align: left;
-            margin-left: 20px; /* Add some left margin for spacing */
-            float: left; /* Align to the left */
-        }
-        .links {
-            width: auto;
-            display: inline-block;
-            vertical-align: bottom; /* Align links to the bottom */
-            text-align: right;
-            margin-right: 20px; /* Add some right margin for spacing */
-            float: right; /* Align to the right */
-        }
-        .links a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 20px; /* Add some left margin for spacing */
-        }
-        .content {
-            display: flex;
-            padding: 20px;
-        }
-        .content-left {
-            flex-grow: 1;
-            margin-right: 20px;
-        }
-        .content-box {
-            background-color: #333;
-            padding: 0;
-            margin-bottom: 20px; /* Spacing between content boxes */
-            border-radius: 5px;
-        }
-        .content-title-bar {
-            background-color: #444;
-            padding: 10px;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-        }
-        .content-body {
-            padding: 20px;
-        }
-        .project {
-            margin-bottom: 20px;
-        }
-        .project-title {
-            font-size: 1.2em;
-            margin: 0 0 10px 0;
-        }
-        .project-languages {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .language-box {
-            display: flex;
-            align-items: center;
-            background-color: #555;
-            border-radius: 15px;
-            padding: 5px 10px;
-        }
-        .language-box .circle {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            margin-right: 5px;
-        }
-        .project-buttons {
-            margin-top: 10px;
-        }
-        .project-buttons a {
-            display: inline-block;
-            margin-right: 10px;
-            padding: 5px 10px;
-            background-color: #555;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 3px;
-        }
-        .widgets {
-            width: 300px; /* Fixed width for widgets */
-            display: flex;
-            flex-direction: column;
-        }
-        .widget {
-            background-color: #333;
-            padding: 0;
-            margin-bottom: 20px;
-            border-radius: 5px;
-        }
-        .widget-title-bar {
-            background-color: #444;
-            padding: 10px;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-        }
-        .widget-body {
-            padding: 20px;
-        }
-        .widget-body a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: inherit;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .widget-body a:hover {
-            background-color: #555;
-            color: #fff;
-            border-radius: 5px;
-            padding: 5px;
-        }
-        .widget-body img {
-            width: 20px; /* Adjust icon size */
-            height: 20px; /* Adjust icon size */
-            margin-right: 10px;
-        }
-        .last-played-song {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        .last-played-song img {
-            width: 60px;
-            height: 60px;
-            margin-right: 10px;
-            border-radius: 5px;
-        }
-        .song-details {
-            display: flex;
-            flex-direction: column;
-        }
-        .song-title {
-            font-size: 1em;
-            font-weight: bold;
-        }
-        .song-artist,
-        .song-album {
-            font-size: 0.9em;
-            color: #bbb;
-        }
-        
-        /* Recent Blog Posts Widget */
-        .widget-body .blog-post {
-            margin-bottom: 20px;
-        }
-
-        .widget-body .rounded-box {
-            background-color: #444;
-            padding: 20px;
-            border-radius: 10px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .widget-body .rounded-box:hover {
-            background-color: #555;
-        }
-
-        .widget-body .rounded-box h4 {
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-
-        .widget-body .rounded-box p {
-            margin-top: 0;
-            margin-bottom: 0;
-        }
-
-        /* To remove underlines from links */
-        .widget-body .rounded-box a {
-            text-decoration: none;
-            color: inherit;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title>Chlove's epic site</title>
 </head>
 <body>
-
-<div class="header">
     <div class="container">
-        <div class="text">
-            <h1>Chlove :3</h1>
-            <p>ur on my website wow</p>
+        <div class="header">
+            <h1>Hi I'm Chlove!</h1>
+            <div id="underline" class="underline"></div>
+            <p id="tagline"></p>
+            <div class="social-links">
+                <a href="https://github.com/ch-love" class="social-icon"><i class="bi bi-github"></i></a>
+                <a href="https://froggie.gay/@c" class="social-icon"><i class="bi bi-mastodon"></i></a>
+                <a href="https://x.com/ch1ove" class="social-icon"><i class="bi bi-twitter"></i></a>
+                <a href="https://twitch.tv/chlovelol" class="social-icon"><i class="bi bi-twitch"></i></a>
+                <a href="https://t.me/ch1ove" class="social-icon"><i class="bi bi-telegram"></i></a>
+                <a href="https://discord.com/users/1193635488314179709" class="social-icon"><i class="bi bi-discord"></i></a>
+                
+                <span class="separator">|</span> <!-- Separator -->
+                
+                <label for="colorInput" class="social-icon" onclick="document.getElementById('colorInput').click();">
+                    <i class="bi bi-palette"></i>
+                </label>
+                <input type="color" id="colorInput" value="#6be3c3" onchange="changeColor(this.value)" style="display: none;">
+            
+                <span class="separator">|</span> <!-- Separator -->
+            
+                <a href="/blog.html" class="social-icon"><i class="bi bi-newspaper"></i></a>
+                <a href="/donate.html" class="social-icon"><i class="bi bi-cash"></i></a>
+            </div>
+            
+            
         </div>
-        <div class="links">
-            <a href="index.html">Home</a>
-            <a href="https://liberapay.com/chlove/donate">Donate</a>
-            <a href="#">Blog</a>
-        </div>
-    </div>
-</div>
 
-<div class="content">
-    <div class="content-left">
-        <div class="content-box">
-            <div class="content-title-bar">
-                <h2>About Me</h2>
-            </div>
-            <div class="content-body">
-                <p>Hi I'm an 18 year old Hobby Developer and streamer (<i>Kind of I never really stream</i>) I also mainly play TF2, Half Life, rhythm games and Tetris.</p>
-                <p>I started coding in Scratch (<i>I still do sometimes</i>) I now mainly code in Swift, Java, JavaScript/Typescript, Lua, C# and Kotlin.</p>
-                <p>Also I used to make Roblox YouTube videos lol</p>
-            </div>
-        </div>
-        <div class="content-box">
-            <div class="content-title-bar">
-                <h2>My Projects</h2>
-            </div>
-            <div class="content-body">
-                <p>Here are some of the projects I've been working on recently:</p>
-                <div class="project">
-                    <div class="project-title">Shaytris</div>
-                    <div class="project-languages">
-                        <div class="language-box">
-                            <div class="circle" style="background-color: #3178c6;"></div>
-                            <span>TypeScript</span>
-                        </div>
-                        <div class="language-box">
-                            <div class="circle" style="background-color: #e34c26;"></div>
-                            <span>HTML</span>
-                        </div>
-                        <div class="language-box">
-                            <div class="circle" style="background-color: #563d7c;"></div>
-                            <span>CSS</span>
-                        </div>
-                        <div class="language-box">
-                            <div class="circle" style="background-color: #F54A2A;"></div>
-                            <span>Swift</span>
-                        </div>
-                        <div class="language-box">
-                            <div class="circle" style="background-color: #b07219;"></div>
-                            <span>Java</span>
-                        </div>
-                        <div class="language-box">
-                            <div class="circle" style="background-color: #00ADD8;"></div>
-                            <span>Go</span>
-                        </div>
+        <section class="projects">
+            <h2>My Projects</h2>
+            <div class="project-container">
+                <div class="project-card">
+                    <h3>Shaytris</h3>
+                    <p>The <i>everything</i>, stacker game!</p>
+                    <div class="tags">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">HTML</span>
+                        <span class="tag">Java</span>
+                        <span class="tag">Rust</span>
                     </div>
-                    <div class="project-buttons">
-                        <a href="https://shaytris.lol">Website</a>
-                        <a href="https://github.com/Shaytris">Source Code</a>
-                    </div>
+                    <a href="https://shaytris.lol" class="view-button" target="_blank">Vist the website</a>
                 </div>
-                <div class="project">
-                    <div class="project-title">Sherbert Chat</div>
-                    <div class="project-languages">
-                        <div class="language-box">
-                            <div class="circle" style="background-color: #3178c6;"></div>
-                            <span>TypeScript</span>
-                        </div>
-                        <div class="language-box">
-                            <div class="circle" style="background-color: #f7df1e;"></div>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="language-box">
-                            <div class="circle" style="background-color: #6cc24a;"></div>
-                            <span>Node.JS</span>
-                        </div>
-                        <div class="language-box">
-                            <div class="circle" style="background-color: #dea584;"></div>
-                            <span>Rust</span>
-                        </div>
-                        <div class="language-box">
-                            <div class="circle" style="background-color: #00B4AB;"></div>
-                            <span>Dart</span>
-                        </div>
+                <div class="project-card">
+                    <h3>Bana</h3>
+                    <p>A social media like website host!</p>
+                    <div class="tags">
+                        <span class="tag">Astro.JS</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">Node.js</span>
                     </div>
-                    <div class="project-buttons">
-                        <a href="https://www.sherbert.cc/">Website</a>
-                        <a href="https://github.com/sherbertchat">Source Code</a>
-                    </div>
+                    <a href="https://discord.gg/qDgt6d7AZr" class="view-button" target="_blank">Join the Discord!</a>
                 </div>
-                <div class="project">
-                    <div class="project-title">Campground</div>
-                    <div class="project-languages">
-                        <div class="language-box">
-                            <div class="circle" style="background-color: #3178c6;"></div>
-                            <span>TypeScript</span>
-                        </div>
-                        <div class="language-box">
-                            <div class="circle" style="background-color: #6cc24a;"></div>
-                            <span>Node.JS</span>
-                        </div>
-                        <div class="language-box">
-                            <div class="circle" style="background-color: #00ADD8;"></div>
-                            <span>Go</span>
-                        </div>
-                        <div class="language-box">
-                            <div class="circle" style="background-color: #84de87;"></div>
-                            <span>Shell Script</span>
-                        </div>
-                    </div>
-                    <div class="project-buttons">
-                        <a href="https://cg.vanished.lol/">Website</a>
-                        <a href="https://github.com/campgroundtv">Source Code</a>
-                    </div>
+                <div class="project-card">
+                    <h3>AeroVolt</h3>
+                    <p>A Windows Live messenger esk Revolt client.</p>
                     <br>
-                    <div class="project">
-                        <div class="project-title">Wumbo</div>
-                        <div class="project-languages">
-                            <div class="language-box">
-                                <div class="circle" style="background-color: #3178c6;"></div>
-                                <span>TypeScript</span>
-                            </div>
-                            <div class="language-box">
-                                <div class="circle" style="background-color: #6cc24a;"></div>
-                                <span>Node.JS</span>
-                            </div>
-                            <div class="language-box">
-                                <div class="circle" style="background-color: #dea584;"></div>
-                                <span>Rust</span>
-                            </div>
-                            <div class="language-box">
-                                <div class="circle" style="background-color: #42b883;"></div>
-                                <span>Vue.JS</span>
-                            </div>
-                            <div class="language-box">
-                                <div class="circle" style="background-color: #84de87;"></div>
-                                <span>Shell Script</span>
-                            </div>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://github.com/snowkeydevs">Source Code</a>
-                        </div>
+                    <br>
+                    <div class="tags">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">HTML</span>
                     </div>
+                    <a href="https://github.com/ch-love/AeroVolt" class="view-button" target="_blank">View the Repo</a>
+                </div>
+                <div class="project-card">
+                    <h3>Sherbert</h3>
+                    <p>A foss messaging application.</p>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="tags">
+                        <span class="tag">Swift</span>
+                        <span class="tag">Kotlin</span>
+                        <span class="tag">Solid.JS</span>
+                        <span class="tag">GO</span>
+                        <span class="tag">TypeScript</span>
+                    </div>
+                    <a href="https://sherbert.cc" class="view-button" target="_blank">Vist the website</a>
                 </div>
             </div>
+        </section>
+    </div>
+    <div id="projectModal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content">
+            <div class="modal-left">
+                <img id="modalProjectImage" src="" alt="">
+            </div>
+            <div class="modal-right">
+                <h3 id="modalProjectTitle"></h3>
+                <p id="modalProjectDescription"></p>
+            </div>
+            <span class="close" onclick="closeModal(event)">&times;</span>
         </div>
     </div>
-    <div class="widgets">
-        <div class="widget">
-            <div class="widget-title-bar">
-                <h3>My Socials</h3>
-            </div>
-            <div class="widget-body">
-                <p>
-                    <a href="https://x.com/@ch1ove">
-                        <img src="https://i.imgur.com/FVFEmZ8.png" alt="Twitter Icon"> Twitter (X) / @ch1ove
-                    </a>
-                </p>
-                <p>
-                    <a href="https://bsky.app/profile/gladdos.lol">
-                        <img src="https://i.imgur.com/cdLipJy.png" alt="BlueSky Icon"> bsky / @gladdos.lol
-                    </a>
-                </p>
-                <p>
-                    <a href="https://discord.gg/aUWzvgASnW">
-                        <img src="https://i.imgur.com/hqOnOAE.png" alt="Discord Icon"> Discord server / Chlove's Cabin
-                    </a>
-                </p>
-                <p>
-                    <a href="https://steamcommunity.com/id/chlovelol/">
-                        <img src="https://i.imgur.com/i1lTnun.png" alt="Steam Icon"> Steam / Chlovelol
-                    </a>
-                </p>
-                <p>
-                    <a href="https://twitch.tv/chlovelol">
-                        <img src="https://i.imgur.com/g5zjW8d.png" alt="Twitch Icon"> Twitch / chlovelol
-                    </a>
-                </p>
-                <p>
-                    <a href="https://osu.ppy.sh/users/36051714">
-                        <img src="https://i.imgur.com/NKANGrW.png" alt="osu! Icon"> osu! / chlovedev
-                    </a>
-                </p>
-                <p>
-                    <a href="https://signal.me/#eu/gagq3AbZnjCON_h_Wv1b5t-QZW685Gckw3rOElA6Cxi_d2alXstCY5PpHX_AlUcP">
-                        <img src="https://i.imgur.com/4xLHGyE.png" alt="Signal Icon"> Signal / @chlove.99
-                    </a>
-                </p>
-                <p>
-                    <a href="https://froggie.gay/@c">
-                        <img src="https://i.imgur.com/QFYIpTY.png" alt="Fedi Icon"> Fediverse / @c@froggie.gay
-                    </a>
-                </p>
-                <p>
-                    <a href="https://codeberg.org/chlove">
-                        <img src="https://i.imgur.com/FEhBm3F.png" alt="CodeBerg Icon"> CodeBerg / chlove
-                    </a>
-                </p>
-                <p>
-                    <img src="https://i.imgur.com/3gUBika.png" alt="Nintendo Switch Icon"> Switch / SW-0060-1423-1360
-                </p>
-                 <p>
-                    <a href="https://github.com/ch-love">
-                        <img src="https://i.imgur.com/tdTPtCW.png" alt="GitHub Icon"> GitHub / ch-love
-                    </a>
-                </p>
-            </div>
-        </div>
-        <div class="widget">
-            <div class="widget-title-bar">
-                <h3>Currently listening to</h3>
-            </div>
-            <div class="widget-body">
-                <div class="last-played-song">
-                    <img id="song-art" src="https://i.imgur.com/CY3rcx7.png" alt="Song Art">
-                    <div class="song-details">
-                        <div id="song-title" class="song-title">Song Title</div>
-                        <div id="song-artist" class="song-artist">Artist Name</div>
-                        <div id="song-album" class="song-album">Album Title</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="widget">
-            <div class="widget-title-bar">
-                <h3>Recent Blog Posts</h3>
-            </div>
-            <div class="widget-body">
-                <div class="blog-post">
-                    <a href="https://vanished.lol">
-                        <div class="rounded-box">
-                            <h4>Welcome to my blog!</h4>
-                            <p>About a 1 minute read</p>
-                        </div>
-                    </a>
-                </div>
-                <!-- Add more blog posts as needed -->
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const apiKey = '47a0657e88922c188d3fdf5622b7b2ee';
-        const username = 'chlovedev';
-        const url = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json`;
-
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                const recentTrack = data.recenttracks.track[0];
-                const trackName = recentTrack.name;
-                const artistName = recentTrack.artist['#text'];
-                const albumName = recentTrack.album['#text'];
-                const albumArt = recentTrack.image[2]['#text'];
-
-                document.getElementById('song-title').textContent = trackName;
-                document.getElementById('song-artist').textContent = artistName;
-                document.getElementById('song-album').textContent = albumName;
-                document.getElementById('song-art').src = albumArt;
-            })
-            .catch(error => console.error('Error fetching the Last.fm API:', error));
-    });
-</script>
-
+    <script src="scriptinglmao.js"></script>
 </body>
 </html>
