@@ -10,8 +10,8 @@
 
 body {
     margin: 0;
-    padding-top: 200px;
-    padding-bottom: 89px; /* Add space at the top of the page */
+    padding-top: 376px;
+    padding-bottom: 289px; /* Add space at the top of the page */
     font-family: 'JetBrains Mono', monospace;
     background-color: #121212;
     color: white;
@@ -343,3 +343,39 @@ a {
     -webkit-background-clip: text;
     color: transparent;
 }
+
+.posts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.post-card {
+    background: #1a1a1a;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.post-card h3 {
+    color: var(--accent-color);
+}
+
+.post-card .tags {
+    display: flex;
+    gap: 10px;
+}
+
+.post-card .tag {
+    background: #333;
+    color: var(--accent-color);
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+}
+
