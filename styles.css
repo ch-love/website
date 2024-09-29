@@ -145,7 +145,7 @@ body {
     padding: 10px 15px;
     cursor: pointer;
     transition: background 0.3s;
-    margin-top: auto; /* Ensure button stays at the bottom */
+    margin-top: 20px; /* Ensure button stays at the bottom */
     text-align: center;
 }
 
