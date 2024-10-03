@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="postview.css">
+    <link rel="icon" type="image/x-icon" href="fav.png">
+    <title>Chlove's super cool blog! | Say hello to Pumpkin3D!</title>
+</head>
+<body>
+    <div class="container">
+        <div class="post-header">
+            <div>
+                <h1 class="post-title">Say hello to Pumpkin3D!</h1>
+                <p class="post-meta">Posted on October 3, 2024 at 10:24 AM AEST | 3 min read</p>
+            </div>
+            <div class="post-buttons">
+                <button class="icon-button" onclick="copyLink()">
+                    <i class="bi bi-link-45deg"></i>
+                </button>
+                <div class="dropdown">
+                    <button class="icon-button dropdown-toggle" type="button" id="fontSelectorButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="bi bi-fonts"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="fontSelectorButton">
+                        <a class="dropdown-item" href="#" onclick="changeFont('Arial')">Arial</a>
+                        <a class="dropdown-item" href="#" onclick="changeFont('Courier New')">Courier New</a>
+                        <a class="dropdown-item" href="#" onclick="changeFont('Georgia')">Georgia</a>
+                        <a class="dropdown-item" href="#" onclick="changeFont('Times New Roman')">Times New Roman</a>
+                        <a class="dropdown-item" href="#" onclick="changeFont('Verdana')">Verdana</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="post-content">
+            <p>
+                Hey everyone! Today I'm writing about a new project I have started called <b>Pumpkin 3D</b>, which is a (<i>as the name implies</i>) 3D game engine written in
+                Python and partially Lua.
+            </p>
+            <p>
+                <h2><b>But why?</b></h2>
+                <br>
+                As I began work on my rewrite of <b>ToonTown Online</b>, I needed a game engine that could handle such a project, and yes I am aware <b>TTO</b> doesn't have
+                anything <i>hard to handle.</i> Mainly what I mean by that is a modern game engine that could handle what I wanted and well, the obvious choice is <b>Panda3D</b>
+                a game engine developed by Disney themselves in 2002 and then maintained by Carnegie Mellon University, mainly due to the fact that Disney didn't
+                want to make their own games which also caused Walt Disney Imagineering formerly Disney Interactive to be dissolved. Although Carnegie Mellon University
+                still maintains it, I wanted to go with something that no other <b>TTO</b> private server has done <i>successfully</i>, make their own game engine and
+                use one other than Panda3D.
+                <br>
+                <br>
+                <h2><b>How does it work, what are the perks</b></h2>
+                <br>
+                <p>
+                    <b>Pumpkin 3D</b> is similar to <b>Vim</b> it works in a terminal, however you can create plugins in Python that you can them load in to add
+                    stuff on top of it, however it doesn't entirely run in a terminal stuff like world (<b><i>stage</i></b>) editing works with a lightweight
+                    web UI, that you can use to move, scale and rotate elements in the world, create stages which in Pumpkin logic means a 3D world.
+                    And audio editing as well to add sound effects. Also it has built in benchmarking and performance management to make sure players
+                    don't have a bad playing experience on even lower-end devices. Along with that a built-in package manager, for updating, installing
+                    and managing packages for all your projects! It's also open source so if anything goes wrong you can even fix it yourself! These just
+                    name some of the perks of using Pumpkin 3D over other game engines on the market. Did I mention it's free :3
+                    <br>
+                    <br>
+                    <h2><b>Enough cog speak let's begin with the real under the hood stuff!</b></h2>
+                    <br>
+                    Let's start with the tech stack, it's obvious why we chose C; it's a terminal application so we used C because it works really well
+                    for terminal applications. Now for Python, we chose Python for the more advanced parts of the editor like plugins, animations, and integrations
+                    with other applications like Discord RPC, WakaTime, etc. We also chose Lua for writing the games and apps; we will talk more about that
+                    in the section.
+                    <br>
+                    <br>
+                    <h2><b>pump.lua</b></h2>
+                    <br>
+                    <b>Pump.lua</b> is a Lua framework for developing advanced 3D games; we made sure to add support for building 3D environments. It was also
+                    developed to be built upon. You can use pumpshop (<i>our package manager</i>) to install frameworks on top of pump.lua, to make it even easier
+                    to develop games and apps the way you want! It's all about choice; we want it to be a great experience for developers in all ways, even in our
+                    frameworks.
+                    <br>
+                    <br>
+                    <h2><b>Cool, what about platform support?</b></h2>
+                    <br>
+                    We are planning on support for all major 3 desktop platforms: Windows, macOS/Darwin, and Linux. We also want to add support for VR and mobile and
+                    maybe even console in the near future. For the editor, you can install it on Windows, macOS, Linux, and BSD. If you can run Python, C, and Lua, you can
+                    compile it on anything; maybe even HaikuOS could work. <i>P.S. if anyone does that, email me please!</i>
+                    <br>
+                    <br>
+                    <h2><b>Conclusion</b></h2>
+                    <br>
+                    To sum it all up, this game engine will be libre, free, and easy to be developed upon. Also, I am very much sorry if this is horribly structured;
+                    this is my first-ever blog post that I have ever written. I hope you enjoyed it, and feel free to contact me about whatever I messed up on, and have a good
+                    night/day/afternoon!
+                </p>
+            </p>            
+        </div>
+    </div>
+
+    <script>
+        function copyLink() {
+            const postUrl = window.location.href; // Get current URL
+            navigator.clipboard.writeText(postUrl).then(() => {
+                alert('Link copied to clipboard!');
+            });
+        }
+
+        function changeFont(font) {
+            document.body.style.fontFamily = font; // Change the body font
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
