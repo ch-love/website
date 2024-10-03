@@ -1,0 +1,63 @@
+body {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text color */
+    font-family: Arial, sans-serif; /* Default font */
+}
+
+.container {
+    max-width: 800px; /* Maximum width of the container */
+    margin: auto; /* Center the container */
+    padding: 20px; /* Add padding to the container */
+}
+
+.post-header {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between title and buttons */
+    align-items: center; /* Center items vertically */
+    border-bottom: 2px solid #5ac1b0; /* Bottom border for header */
+    padding-bottom: 10px; /* Padding below the header */
+}
+
+.post-title {
+    font-size: 2rem; /* Title size */
+    margin: 0; /* Remove default margin */
+}
+
+.post-meta {
+    margin: 0; /* Remove default margin */
+    font-size: 0.9rem; /* Smaller font size for meta info */
+    color: #bbb; /* Light gray color for meta info */
+}
+
+.post-buttons {
+    display: flex; /* Use flexbox for button alignment */
+    gap: 10px; /* Space between buttons */
+}
+
+.icon-button {
+    background: transparent; /* Transparent background */
+    border: none; /* Remove border */
+    color: #fff; /* White icon color */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: color 0.3s; /* Transition effect for color */
+}
+
+.icon-button:hover {
+    color: #6be3c3; /* Change color to aqua on hover */
+}
+
+.post-content {
+    margin-top: 20px; /* Space above content */
+}
+
+.post-content p {
+    margin: 15px 0; /* Space between paragraphs */
+}
+
+.h2 {
+    color: #6be3c3;
+}
+
+a {
+    text-decoration: none;
+  }
