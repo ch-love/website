@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="icon" type="image/x-icon" href="fav.png">
+    <title>Chlove's Epic Blog</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>My blog</h1>
+            <div id="underline" class="underline"></div>
+            <p id="tagline"></p>
+            <div class="social-links">
+                <a href="https://github.com/ch-love" class="social-icon"><i class="bi bi-github"></i></a>
+                <a href="https://froggie.gay/@c" class="social-icon"><i class="bi bi-mastodon"></i></a>
+                <a href="https://x.com/ch1ove" class="social-icon"><i class="bi bi-twitter"></i></a>
+                <a href="https://twitch.tv/chlovelol" class="social-icon"><i class="bi bi-twitch"></i></a>
+                <a href="https://t.me/ch1ove" class="social-icon"><i class="bi bi-telegram"></i></a>
+                <a href="https://discord.com/users/1193635488314179709" class="social-icon"><i class="bi bi-discord"></i></a>
+                <a href="mailto:me@chlove.lol" class="social-icon"><i class="bi bi-envelope-fill"></i></a>
+                <span class="separator">|</span>
+                <label for="colorInput" class="social-icon" onclick="document.getElementById('colorInput').click();">
+                    <i class="bi bi-palette"></i>
+                </label>
+                <input type="color" id="colorInput" value="#6be3c3" onchange="changeColor(this.value)" style="display: none;">
+                <span class="separator">|</span>
+                <a href="/blog.html" class="social-icon"><i class="bi bi-newspaper"></i></a>
+                <a href="/donate.html" class="social-icon"><i class="bi bi-cash"></i></a>
+            </div>
+        </header>
+
+        <main class="blog-posts">
+            <h2>Latest Posts</h2>
+            <div class="posts-container">
+                <!-- Sample Post 1 -->
+                <article class="post-card">
+                    <h3>Say hello to Pumpkin3D!</h3>
+                    <p>Hey everyone! Today I'm writing about a new project I have started called <b>Pumpkin 3D</b>, which is a (<i>as the name implies</i>) 3D game engine written in Python and partially Lua.</p>
+                    <br>
+                    <a href="post01.html" class="view-button">Read More</a>
+                </article>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 Chlove. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="scriptinglmao.js"></script>
+    <script>
+    document.querySelectorAll('.view-button').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent the default link behavior
+            const targetUrl = this.getAttribute('href'); // Get the URL to navigate to
+            
+            // Add a fade-out effect
+            document.body.style.transition = "opacity 0.5s";
+            document.body.style.opacity = 0;
+            
+            setTimeout(() => {
+                window.location.href = targetUrl; // Redirect after the transition
+            }, 500); // Time should match the CSS transition duration
+        });
+    });
+</script>
+
+</body>
+</html>
